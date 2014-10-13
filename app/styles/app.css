@@ -1,30 +1,25 @@
-/* app css stylesheet */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
+.centrar-vertical {
+  display: table;
+  height: 100%;
+  width: 100%; }
 
-.menu:before {
-  content: "[";
-}
+.centrar-vertical > * {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%; }
 
-.menu:after {
-  content: "]";
-}
+.cuerpo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 50px; }
 
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+.header .logo-angular {
+  height: 50px;
+  float: left; }
+.header .menu-principal li {
+  cursor: pointer; }

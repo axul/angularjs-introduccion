@@ -1,0 +1,39 @@
+$azul-principal: #457EF6;
+
+html{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+}
+
+.centrar-vertical {
+ display: table;
+ height: 100%;
+ width: 100%;
+}
+.centrar-vertical>* {
+ display: table-cell;
+ vertical-align: middle;
+ height: 100%;
+}
+
+.cuerpo{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+}
+
+.header{
+  .logo-angular{
+    height: 50px;
+    float: left;
+  }
+  .menu-principal{
+    li{
+      cursor: pointer;
+    }
+  }
+}
