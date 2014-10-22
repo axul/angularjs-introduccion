@@ -22,26 +22,34 @@ directive('appVersion', ['version', function(version) {
     }
   };
 }])
-.directive('onLoad', [function(){
+.directive('iframeLoader', ['$sce',function($sce){
+  var cargando = 
+  '<div class="cargando-wrap animacion animacion-fade" ng-show="mostrarCargando">\
+  <div class="centrar-vertical"><div>\
+  <span class="glyphicon glyphicon-list-alt animacion-cambiar-color"></span>\
+  </div></div>\
+  </div>\
+  <iframe width="100%" height="300" ng-src="{{urlAprobado}}" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
   return {
-    template:'',
+    template: cargando,
     scope: {
+      url: "@"
     },
-    link: function(scope, element, attrs){
-      var cargando = 
-      '<div class="cargando-wrap">\
-      <div class="centrar-vertical">\
-      <div>\
-      <span class="glyphicon glyphicon-list-alt"></span>\
-      </div>\
-      </div>\
-      </div>';
-      if (element.find('iframe').length)
-      {
-        element.append(cargando);
-        element.find('iframe').on('load', function(){
-          element.children('.cargando-wrap').remove();
-        });
+    compile: function(element, attributes){
+      return{
+        pre: function(scope){
+          scope.urlAprobado = $sce.trustAsResourceUrl(scope.url);
+       },
+        post: function(scope,element,attrs){
+          scope.mostrarCargando = true;
+          element.find('iframe').on('load', function(){
+            scope.mostrarCargando = false;
+            scope.$digest();
+          });
+          element.on('$destroy', function(){
+
+          }); 
+        }
       }
     }
   }}]);
