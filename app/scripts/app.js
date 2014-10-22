@@ -15,5 +15,6 @@ angular.module('IntroAngularjs', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {templateUrl: 'views/home.html', controller: 'Home'});
   $routeProvider.when('/curso', {templateUrl: 'views/curso.html', controller: 'Curso'});
+  $routeProvider.when('/acercaDe', {templateUrl: 'views/acercaDe.html', controller: 'AcercaDe'});
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);

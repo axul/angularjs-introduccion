@@ -21,4 +21,27 @@ directive('appVersion', ['version', function(version) {
       });
     }
   };
-}]);
+}])
+.directive('onLoad', [function(){
+  return {
+    template:'',
+    scope: {
+    },
+    link: function(scope, element, attrs){
+      var cargando = 
+      '<div class="cargando-wrap">\
+      <div class="centrar-vertical">\
+      <div>\
+      <span class="glyphicon glyphicon-list-alt"></span>\
+      </div>\
+      </div>\
+      </div>';
+      if (element.find('iframe').length)
+      {
+        element.append(cargando);
+        element.find('iframe').on('load', function(){
+          element.children('.cargando-wrap').remove();
+        });
+      }
+    }
+  }}]);

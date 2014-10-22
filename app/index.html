@@ -31,17 +31,25 @@
         <li ng-class="{'active': seccionActual=='Curso'}" ng-click="">
           <a href="#curso">Angularjs</a>
         </li>
-        <li ng-class="{'active': seccionActual=='Acerca de'}" ng-lick="">
-          <a>Acerca de</a>
+        <li ng-class="{'active': seccionActual=='Acercade'}" ng-click="">
+          <a href="#acercaDe">Acerca de</a>
         </li>
       </ul>
     </nav>
   </div>
 
-  <div ng-view class="cuerpo container-fluid"></div>
+  <div class="container cuerpo-wrap">
+    <div ng-view class="cuerpo animacion animacion-slide animacion-slide-izq"></div>  
+  </div>
   
-  
-  <div class="footer"></div>
+  <div class="footer" ng-show="seccionActual!='AcercaDe'">
+    <div class="container">
+      <p>
+        {{ 'Current version is v%VERSION%.' | interpolate }}
+      </p>
+      <img class="logo hidden-xs" src="images/logo.png" alt="Logo-angular">
+    </div>
+  </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>-->
