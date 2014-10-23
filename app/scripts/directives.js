@@ -27,6 +27,7 @@ directive('appVersion', ['version', function(version) {
   '<div class="cargando-wrap animacion animacion-fade" ng-show="mostrarCargando">\
   <div class="centrar-vertical"><div>\
   <span class="glyphicon glyphicon-list-alt animacion-cambiar-color"></span>\
+  <br><span>Cargando</span>\
   </div></div>\
   </div>\
   <iframe width="100%" height="300" ng-src="{{urlAprobado}}" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';

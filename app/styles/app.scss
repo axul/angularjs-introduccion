@@ -7,6 +7,7 @@
  $gris: grey;
  $gris-oscuro: #252525;
  $blanco: white;
+ $rojo-angular: #E32939;
 
  *{
  }
@@ -104,18 +105,33 @@ body{
   height: 100%;
   top: 0;
   bottom: 0;
-  span{
+  .glyphicon{
     font-size: 120px;
   }
 }
 
 .glyphicon-expand{
-  color: #E32939;
+  color: $rojo-angular;
   vertical-align: top;
   &.activo{
     color: red;
     padding-top: 2px;
   }
+}
+
+var{
+  color: $rojo-angular;
+}
+
+.img-wrap{
+  text-align: center;
+  img{
+    max-width: 100%;
+  }
+}
+
+.full-height{
+  height: 100%;
 }
 
 /*****************************************************************

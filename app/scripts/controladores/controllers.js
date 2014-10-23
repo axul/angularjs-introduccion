@@ -13,7 +13,8 @@ angular.module('IntroAngularjs.controllers', [])
     $scope.segmentoActivo = i;
   }
   $scope.jsFiddles = [
-  {url: 'http://jsfiddle.net/axul/x55kau48/3/embedded/'}
+  {url: 'http://jsfiddle.net/axul/x55kau48/3/embedded/'},
+  {url: 'http://jsfiddle.net/axul/vpwtLtbx/7/embedded/'}
   ];
 }])
 .controller('AcercaDe', ['$scope','$rootScope', function($scope,$rootScope) {

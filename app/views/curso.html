@@ -6,6 +6,18 @@
       Data Binding
     </h3>
     <div class="" ng-show="segmentoActivo==1">
+      <div class="descripcion" ng-show="segmentoActivo==1">
+        <div class="row">
+          <div class="col-sm-5 img-wrap">
+            <img class="" src="images/data-binding.png" alt="data binding">
+          </div>
+          <div class="col-sm-7 full-height">
+            <h3>
+              Las plantillas de angular se compilan para producir vistas, luego cualquier cambio en ellas se reflejan en el modelo, y cualquier cambio en el modelo se propaga a la vista.
+            </h3>
+          </div>
+        </div>
+      </div>
       <div class="animacion animacion-fade-in" ng-if="segmentoActivo==1" iframe-loader url="{{jsFiddles[0].url}}">
       </div>  
     </div>
@@ -16,10 +28,23 @@
       Modulos
     </h3>
     <div class="" ng-show="segmentoActivo==2">
-    <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==2">
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==2">
+        <h4>¿Qué es un módulo?</h4>  
         <p>
-          
-        </p>  
+          Contenedores para diferentes partes de la aplicación (controladores, servicios, entre otros).
+        </p>
+        <pre>
+          angular.module('IntroAngularjs.controllers', [])
+            .controller('Home', ['$scope','$rootScope', function(<var>$scope</var>,<var>$rootScope</var>) {
+              <var>$rootScope.seccionActual</var> = 'Inicio';
+            }]);
+        </pre>
+        <p>
+          AngularJs no tiene un método principal. Los módulos se encargan de especificar el arranque y la secuencia de una aplicación.
+        </p>
+        <p>
+          Esto permite código fácilmente reusable y simple de entender.
+        </p>
       </div>
     </div>
   </div>
@@ -29,7 +54,16 @@
       Scopes
     </h3>
     <div class="" ng-show="segmentoActivo==3">
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==3" iframe-loader url="{{jsFiddles[0].url}}">
+      <div class="descripcion">
+        <h4>¿Qué es un scope?</h4>
+        <p>
+          Es el objeto que refiere al modelo de la aplicación. Provee de contexto para la ejecución de expresiones. Son organizados de forma jerárgica. Son el "pegamento" entre el controlador y la vista.
+        </p>
+        <ul>
+          <li>Observan las modificaciones en el modelo ($watch)</li>
+          <li>Propagan estos cambios hasta las vistas ($apply)</li>
+          <li>Pueden anidarse como hijos o aislados para controlar el acceso a las propiedades de los componentes de las aplicaciones</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -39,7 +73,16 @@
       Routing
     </h3>
     <div class="" ng-show="segmentoActivo==4">
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==4" iframe-loader url="{{jsFiddles[0].url}}">
+      
+    </div>
+  </div>
+  <div class="seccion">
+    <h3 ng-click="activarSegmento(9)">
+      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==9}"></span>
+      Controladores
+    </h3>
+    <div class="" ng-show="segmentoActivo==9">
+      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==9" iframe-loader url="{{jsFiddles[1].url}}">
       </div>
     </div>
   </div>
@@ -49,8 +92,7 @@
       Directivas
     </h3>
     <div class="" ng-show="segmentoActivo==5">
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==5" iframe-loader url="{{jsFiddles[0].url}}">
-      </div>
+      
     </div>
   </div>
   <div class="seccion">
@@ -59,8 +101,7 @@
       Servicios
     </h3>
     <div class="" ng-show="segmentoActivo==6">
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==6" iframe-loader url="{{jsFiddles[0].url}}">
-      </div>
+      
     </div>
   </div>
   <div class="seccion">
@@ -69,8 +110,7 @@
       Filtros
     </h3>
     <div class="" ng-show="segmentoActivo==7">
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==7" iframe-loader url="{{jsFiddles[0].url}}">
-      </div>
+      
     </div>
   </div>
   <div class="seccion">
@@ -79,8 +119,7 @@
       Eventos
     </h3>
     <div class="" ng-show="segmentoActivo==8">
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==8" iframe-loader url="{{jsFiddles[0].url}}">
-      </div>
+      
     </div>
   </div>
 </div>

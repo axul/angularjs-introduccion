@@ -71,15 +71,26 @@ body {
   height: 100%;
   top: 0;
   bottom: 0; }
-  .cargando-wrap span {
+  .cargando-wrap .glyphicon {
     font-size: 120px; }
 
 .glyphicon-expand {
-  color: #E32939;
+  color: #e32939;
   vertical-align: top; }
   .glyphicon-expand.activo {
     color: red;
     padding-top: 2px; }
+
+var {
+  color: #e32939; }
+
+.img-wrap {
+  text-align: center; }
+  .img-wrap img {
+    max-width: 100%; }
+
+.full-height {
+  height: 100%; }
 
 /*****************************************************************
  Animaciones
