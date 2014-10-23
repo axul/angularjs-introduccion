@@ -75,10 +75,11 @@ body {
     font-size: 120px; }
 
 .glyphicon-expand {
-  color: #E32939; }
-
-.glyphicon-collapse-down {
-  color: red; }
+  color: #E32939;
+  vertical-align: top; }
+  .glyphicon-expand.activo {
+    color: red;
+    padding-top: 2px; }
 
 /*****************************************************************
  Animaciones
@@ -98,14 +99,17 @@ body {
 .animacion-fade.ng-leave.ng-leave-active, .animacion-fade.ng-hide-add.ng-hide-add-active {
   opacity: 0; }
 
-.animacion-fade-in.ng-enter, .animacion-fade-in.ng-hide-remove {
-  opacity: 0; }
-.animacion-fade-in.ng-enter.ng-enter-active, .animacion-fade-in.ng-hide-remove.ng-hide-remove-active {
-  opacity: 1; }
-.animacion-fade-in.ng-leave, .animacion-fade-in.ng-hide-add {
-  display: none; }
-.animacion-fade-in.ng-leave.ng-leave-active, .animacion-fade-in.ng-hide-add.ng-hide-add-active {
-  display: none; }
+.animacion-fade-in {
+  /*   &.ng-leave,&.ng-hide-add,&.ng-hide{
+      display: none;
+    }
+    &.ng-leave.ng-leave-active,&.ng-hide-add.ng-hide-add-active{
+      display: none;
+      } */ }
+  .animacion-fade-in.ng-enter, .animacion-fade-in.ng-hide-remove {
+    opacity: 0; }
+  .animacion-fade-in.ng-enter.ng-enter-active, .animacion-fade-in.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1; }
 
 .animacion-fade-out.ng-enter, .animacion-fade-out.ng-hide-remove {
   display: none; }
@@ -132,13 +136,16 @@ body {
   position: absolute; }
 
 .animacion-slide-arr.ng-leave, .animacion-slide-arr.ng-hide-add {
-  -webkit-transform: translate3d(0, 0%, 0);
-  transform: translate3d(0, 0%, 0);
-  margin-bottom: 0%; }
+  /* -webkit-transform: translate3d(0,0%,0);
+  transform: translate3d(0,0%,0);
+  margin-bottom: 0%;
+  */
+  height: 300px; }
 .animacion-slide-arr.ng-leave.ng-leave-active, .animacion-slide-arr.ng-hide-add.ng-hide-add-active {
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
-  margin-bottom: -100%; }
+  /* -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+  margin-bottom: -100%; */
+  height: 0px; }
 
 .animacion-rotar-infinito {
   transform-origin: 50% 50%;
@@ -151,6 +158,13 @@ body {
   -ms-animation: Rotate 500ms infinite linear;
   -o-animation: Rotate 500ms infinite linear;
   animation: Rotate 500ms infinite linear; }
+
+.animacion-rotar-45 {
+  -o-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
 
 .animacion-cambiar-color {
   -webkit-animation: Color 1s infinite linear;
