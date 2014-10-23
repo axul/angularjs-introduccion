@@ -8,7 +8,7 @@
  $gris-oscuro: #252525;
  $blanco: white;
  $rojo-angular: #E32939;
-
+ $string: #682323;
  *{
  }
 
@@ -47,6 +47,9 @@ body{
   padding-bottom: 270px;
   margin-top: 50px;
   overflow: hidden;
+  &.no-padding{
+    padding-bottom: 0px;
+  }
 }
 
 .header{
@@ -58,6 +61,9 @@ body{
     li{
       cursor: pointer;
     }
+  }
+  .titulo{
+    font-size: 35px;
   }
 }
 
@@ -85,6 +91,9 @@ body{
   }
   > div{
     padding: 10px 20px;
+  }
+  .descripcion{
+    text-align: justify;
   }
 }
 
@@ -129,10 +138,19 @@ var{
   img{
     max-width: 100%;
   }
+  &.autor{
+    width: 120px;
+  }
 }
 
 .full-height{
   height: 100%;
+}
+
+code,pre{
+  span{
+    color: $string;
+  }
 }
 
 /*****************************************************************
@@ -144,6 +162,13 @@ var{
   -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
   -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
   transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+ .animacion-corta{
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
 }
 
 .animacion-fade{

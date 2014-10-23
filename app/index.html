@@ -30,8 +30,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img class="logo-angular" src="images/angularjs.png" alt="Logo-angular">
-      </div>
+        <span class="titulo"><img class="logo-angular" src="images/angularjs.png" alt="Logo-angular"><span class="hidden-xs hidden-sm">Introducción a AngularJs</span></span>
+      </div>      
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right menu-principal">
           <li ng-class="{'active': seccionActual=='Inicio'}">
@@ -49,7 +49,7 @@
   </div>
 
   <div class="container cuerpo-wrap">
-    <div ng-view class="cuerpo animacion animacion-slide-izq"></div>  
+    <div ng-view class="cuerpo animacion animacion-slide-izq" ng-class="{'no-padding': seccionActual=='AcercaDe'}"></div>  
   </div>
   
   <div class="footer animacion animacion-fade" ng-show="seccionActual!='AcercaDe'">

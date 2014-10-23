@@ -1,12 +1,12 @@
 <div class="grupo-clickable">
-  <h1>Aspectos técnicos</h1>
+  <h2>Aspectos técnicos</h2>
   <div class="seccion">
     <h3 ng-click="activarSegmento(1)">
       <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==1}"></span>
       Data Binding
     </h3>
     <div class="" ng-show="segmentoActivo==1">
-      <div class="descripcion" ng-show="segmentoActivo==1">
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==1">
         <div class="row">
           <div class="col-sm-5 img-wrap">
             <img class="" src="images/data-binding.png" alt="data binding">
@@ -34,10 +34,9 @@
           Contenedores para diferentes partes de la aplicación (controladores, servicios, entre otros).
         </p>
         <pre>
-          angular.module('IntroAngularjs.controllers', [])
-            .controller('Home', ['$scope','$rootScope', function(<var>$scope</var>,<var>$rootScope</var>) {
-              <var>$rootScope.seccionActual</var> = 'Inicio';
-            }]);
+          angular.module(<span>'IntroAngularjs.controllers'</span>, [])
+          .controller(<span>'Home'</span>, [<span>'$scope'</span>,<span>'$rootScope'</span>, function(<var>$scope</var>,<var>$rootScope</var>) {
+          <var>$rootScope.seccionActual</var> = <span>'Inicio'</span>;}]);
         </pre>
         <p>
           AngularJs no tiene un método principal. Los módulos se encargan de especificar el arranque y la secuencia de una aplicación.
@@ -54,7 +53,7 @@
       Scopes
     </h3>
     <div class="" ng-show="segmentoActivo==3">
-      <div class="descripcion">
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==3">
         <h4>¿Qué es un scope?</h4>
         <p>
           Es el objeto que refiere al modelo de la aplicación. Provee de contexto para la ejecución de expresiones. Son organizados de forma jerárgica. Son el "pegamento" entre el controlador y la vista.
@@ -79,9 +78,30 @@
       Routing
     </h3>
     <div class="" ng-show="segmentoActivo==4">
-      <p>
-        En desarrollo.
-      </p>
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==4">
+        <p>
+          Las rutas de las aplicaiones en AngularJs se manejan a través de el <var>$routeProvider</var> que es el proveedor del servidor de rutas <var>$route</var> que requiere el modulo <code>ngRoute</code>.
+        </p>
+        <pre>
+          var <var>app</var> = angular.module(<span>'IntroAngularjs'</span>, [
+          <span>
+            'ngRoute',
+            'ngAnimate',
+            'ngTouch',
+            'IntroAngularjs.filters',
+            'IntroAngularjs.services',
+            'IntroAngularjs.directives',
+            'IntroAngularjs.controllers',
+            'IntroAngularjs.controllers.principal'
+          </span>
+          ]).
+          config([<span>'$routeProvider'</span>, function(<var>$routeProvider</var>) {
+          <var>$routeProvider</var>.when(<span>'/home'</span>, {templateUrl: <span>'views/home.html'</span>, controller: <span>'Home'</span>});
+          <var>$routeProvider</var>.when(<span>'/curso'</span>, {templateUrl: <span>'views/curso.html'</span>, controller: <span>'Curso'</span>});
+          <var>$routeProvider</var>.when(<span>'/acercaDe'</span>, {templateUrl: <span>'views/acercaDe.html'</span>, controller: <span>'AcercaDe'</span>});
+          <var>$routeProvider</var>.otherwise({redirectTo: <span>'/home'</span>});}]);
+        </pre>
+      </div>
     </div>
   </div>
   <div class="seccion">
@@ -90,7 +110,7 @@
       Controladores
     </h3>
     <div class="" ng-show="segmentoActivo==9">
-      <div class="descripcion">
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==9">
         <h4>En AngularJs, los controladores son funciones constructoras de JavaScript que se utilizan para aumentar al Scope.</h4>
         <p>
           Cuando se instancian, se hace disponible un nuevo Scope hijo para injectarse como parametro en la función constructora del controlador (parámetro <code>$scope</code>).
@@ -123,7 +143,7 @@
       Directivas
     </h3>
     <div class="" ng-show="segmentoActivo==5">
-      <div class="descripcion">
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==5">
         <h4>¿Qué son las directivas?</h4>
         <p>
           Son marcadores en elementos del DOM Que le dicen al compilador HTML (<code>$compile</code>) de AngularJs que ese elemento en cuestión tendra asignado un comportamiento específico.
@@ -142,9 +162,11 @@
       Servicios
     </h3>
     <div class="" ng-show="segmentoActivo==6">
-      <p>
-        En desarrollo.
-      </p>
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==6">
+        <p>
+          En desarrollo.
+        </p>
+      </div>
     </div>
   </div>
   <div class="seccion">
@@ -153,9 +175,11 @@
       Filtros
     </h3>
     <div class="" ng-show="segmentoActivo==7">
-      <p>
-        En desarrollo.
-      </p>
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==7">
+        <p>
+          En desarrollo.
+        </p>
+      </div>
     </div>
   </div>
   <div class="seccion">
@@ -164,9 +188,11 @@
       Eventos
     </h3>
     <div class="" ng-show="segmentoActivo==8">
-      <p>
-        En desarrollo.
-      </p>
+      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==8">
+        <p>
+          En desarrollo.
+        </p>
+      </div>
     </div>
   </div>
 </div>
