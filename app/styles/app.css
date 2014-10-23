@@ -10,7 +10,8 @@ html {
 body {
   min-height: 100%;
   display: block;
-  position: relative; }
+  position: relative;
+  overflow-x: hidden; }
 
 .centrar-vertical {
   display: table;
