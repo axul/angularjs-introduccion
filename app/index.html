@@ -15,13 +15,13 @@
   <link rel="stylesheet" href="styles/app.css"/>
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body ng-controller="Principal" class="ng-cloak">
+<body ng-controller="Principal">
 
   <!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div class="header navbar navbar-default navbar-fixed-top banner affix-top" role="navigation">
+  <div class="header navbar navbar-default navbar-fixed-top banner affix-top ng-cloak" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,16 +48,25 @@
     </div>
   </div>
 
-  <div class="container cuerpo-wrap">
+  <div class="container cuerpo-wrap ng-cloack">
     <div ng-view class="cuerpo animacion animacion-slide-izq" ng-class="{'no-padding': seccionActual=='AcercaDe'}"></div>  
   </div>
   
-  <div class="footer animacion animacion-fade" ng-show="seccionActual!='AcercaDe'">
+  <div class="footer animacion animacion-fade ng-cloak" ng-show="seccionActual!='AcercaDe'">
     <div class="container">
       <p>
         {{ 'Versión: v%VERSION%.' | interpolate }}
       </p>
       <img class="logo hidden-xs" src="images/logo.png" alt="Logo-angular">
+    </div>
+  </div>
+
+  <div class="mascara-cargando animacion animacion-fade" ng-show="false">
+    <div class="centrar-vertical">
+      <div>
+        <h2><span class="glyphicon glyphicon-refresh"></span></h2>
+        <h2>Cargando..</h2>
+      </div>
     </div>
   </div>
 

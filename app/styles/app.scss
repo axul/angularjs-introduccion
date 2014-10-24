@@ -1,7 +1,7 @@
 /*****************************************************************
  Globales
  *****************************************************************/
-
+ $blanco: white;
  $azul-principal: #457EF6;
  $gris-claro: #F0F0F0;
  $gris: grey;
@@ -28,6 +28,15 @@ body{
   display: block;
   position: relative;
   overflow-x: hidden;
+}
+
+.mascara-cargando{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
 }
 
 .centrar-vertical {
