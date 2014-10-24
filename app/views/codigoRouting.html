@@ -1,0 +1,15 @@
+<pre>var <var>app</var> = angular.module(<span>'IntroAngularjs'</span>, [<span>
+    'ngRoute',
+    'ngAnimate',
+    'ngTouch',
+    'IntroAngularjs.filters',
+    'IntroAngularjs.services',
+    'IntroAngularjs.directives',
+    'IntroAngularjs.controllers',
+    'IntroAngularjs.controllers.principal'</span>
+  ]).
+  config([<span>'$routeProvider'</span>, function(<var>$routeProvider</var>) {
+  <var>$routeProvider</var>.when(<span>'/home'</span>, {templateUrl: <span>'views/home.html'</span>, controller: <span>'Home'</span>});
+  <var>$routeProvider</var>.when(<span>'/curso'</span>, {templateUrl: <span>'views/curso.html'</span>, controller: <span>'Curso'</span>});
+  <var>$routeProvider</var>.otherwise({redirectTo: <span>'/home'</span>});
+  }]);</pre>

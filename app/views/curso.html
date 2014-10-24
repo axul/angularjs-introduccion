@@ -8,13 +8,20 @@
     <div class="" ng-show="segmentoActivo==1">
       <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==1">
         <div class="row">
-          <div class="col-sm-5 img-wrap">
+          <div class="col-xs-6 col-sm-4 col-lg-3 img-wrap">
+            <img class="hidden-lg" src="images/one-way-data-binding.png" alt="data binding">
             <img class="" src="images/data-binding.png" alt="data binding">
           </div>
-          <div class="col-sm-7 full-height">
-            <h3>
-              Las plantillas de angular se compilan para producir vistas, luego cualquier cambio en ellas se reflejan en el modelo, y cualquier cambio en el modelo se propaga a la vista.
-            </h3>
+          <div class="col-sm-8 col-lg-9">
+            <h4>
+              Las plantillas de angular se compilan para producir vistas, luego cualquier cambio en ellas se reflejan en el modelo, y cualquier cambio en el modelo se propaga a la vista, que pasa a ser una projección instantánea de este.
+            </h4>
+            <p>
+              En la mayoría de los sistemas de plantillas, el sistema mezcla los datos en una sola dirección: se mezclan las plantillas y los modelos en una vista. Luego, los cambios de los modelos no se reflejan automáticamente en la vista, y cualquier cambio que el usuario relaiza en la vista no se ve automáticamente reflejado en el modelo.
+            </p>
+            <p>
+              El Data-binding en AngularJs es la sincronización automática de los datos entre el modelo y la vista. La forma en que se implementa deja al modelo ser la "single-source-of-truth" de la aplicación.
+            </p>
           </div>
         </div>
       </div>
@@ -33,11 +40,7 @@
         <p>
           Contenedores para diferentes partes de la aplicación (controladores, servicios, entre otros).
         </p>
-        <pre>
-          angular.module(<span>'IntroAngularjs.controllers'</span>, [])
-          .controller(<span>'Home'</span>, [<span>'$scope'</span>,<span>'$rootScope'</span>, function(<var>$scope</var>,<var>$rootScope</var>) {
-          <var>$rootScope.seccionActual</var> = <span>'Inicio'</span>;}]);
-        </pre>
+        <div ng-include="'views/codigoModulos.html'"></div>
         <p>
           AngularJs no tiene un método principal. Los módulos se encargan de especificar el arranque y la secuencia de una aplicación.
         </p>
@@ -79,28 +82,13 @@
     </h3>
     <div class="" ng-show="segmentoActivo==4">
       <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==4">
+        <h4>
+          ¿Cómo se manejan las rutas en AngularJs?
+        </h4>
         <p>
-          Las rutas de las aplicaiones en AngularJs se manejan a través de el <var>$routeProvider</var> que es el proveedor del servidor de rutas <var>$route</var> que requiere el modulo <code>ngRoute</code>.
+          Las rutas de las aplicaciones en AngularJs se manejan a través de el <var>$routeProvider</var> que es el proveedor del servidor de rutas <var>$route</var> que requiere el modulo <code>ngRoute</code>.
         </p>
-        <pre>
-          var <var>app</var> = angular.module(<span>'IntroAngularjs'</span>, [
-          <span>
-            'ngRoute',
-            'ngAnimate',
-            'ngTouch',
-            'IntroAngularjs.filters',
-            'IntroAngularjs.services',
-            'IntroAngularjs.directives',
-            'IntroAngularjs.controllers',
-            'IntroAngularjs.controllers.principal'
-          </span>
-          ]).
-          config([<span>'$routeProvider'</span>, function(<var>$routeProvider</var>) {
-          <var>$routeProvider</var>.when(<span>'/home'</span>, {templateUrl: <span>'views/home.html'</span>, controller: <span>'Home'</span>});
-          <var>$routeProvider</var>.when(<span>'/curso'</span>, {templateUrl: <span>'views/curso.html'</span>, controller: <span>'Curso'</span>});
-          <var>$routeProvider</var>.when(<span>'/acercaDe'</span>, {templateUrl: <span>'views/acercaDe.html'</span>, controller: <span>'AcercaDe'</span>});
-          <var>$routeProvider</var>.otherwise({redirectTo: <span>'/home'</span>});}]);
-        </pre>
+        <div ng-include="'views/codigoRouting.html'"></div>
       </div>
     </div>
   </div>
@@ -132,6 +120,10 @@
           <li>Compartir código entre controladores. Los servicios están para ello.</li>
           <li>Controlar el ciclo de vida de otros componentes.</li>
         </ul>
+        <p>
+          Sintaxis para los controladores:
+        </p>
+        <pre>.controller(<span>'Home'</span>, [<span>'$scope'</span>,<span>'$rootScope'</span>, function(<var>$scope</var>,<var>$rootScope</var>) {}]);</pre>
       </div>
       <div class="animacion animacion-fade-in" ng-if="segmentoActivo==9" iframe-loader url="{{jsFiddles[1].url}}">
       </div>
@@ -151,6 +143,10 @@
         <p>
           AngularJs tiene un amplio set de directivas incluidas, como <code>ng-repeat</code> que son de extrema utilidad para cualquier desarrollador que se aventure con este framework, ademas de ofrecer la posibilidad de crear nuestras propias directivas a nuestro antojo.
         </p>
+        <p>
+          Ejemplo de la sintaxis para la directiva de un controlador:
+        </p>
+        <pre class="ng-non-bindable">&lt;div <var>ng-controller</var>=<span>"Controller"</span>&gt;&lt;/div&gt;</pre>
       </div>
       <div class="animacion animacion-fade-in" ng-if="segmentoActivo==5" iframe-loader url="{{jsFiddles[2].url}}">
       </div>
@@ -163,9 +159,23 @@
     </h3>
     <div class="" ng-show="segmentoActivo==6">
       <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==6">
+        <h4>
+          Los servicios se utilizan en la aplicación para compartir código a través de ella.
+        </h4>
         <p>
-          En desarrollo.
+          Los controladores son instanciados sólo cuándo se necesitan y son descartados cuando se sale de su contexto. Cada vez que cambiamos de ruta o se carga una vista, el controlador actual se limpia. 
         </p>
+        <p>
+          Los servicios son objetos que se instanacian una sola vez por aplicación, y se cargan solo cuándo son necesarios (lazy-load).
+        </p>
+        <h4>Registrar y usar un servicio</h4>
+        <p>
+          Los servicios se registran en los módulos a través de diferentes métodos.
+        </p>
+        <p>
+          Para usar un servicio se debe agregar la dependencia al componente donde se quiere usar, de esta manera se injecta y se vuelve disponible.
+        </p>
+        <div ng-include="'views/codigoServicios.html'"></div>
       </div>
     </div>
   </div>
@@ -176,9 +186,24 @@
     </h3>
     <div class="" ng-show="segmentoActivo==7">
       <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==7">
+        <h4>
+          Los filtros proveen de una manera para dar formato a los datos de salida.
+        </h4>
         <p>
-          En desarrollo.
+          Para utilizar los filtros en nuestra aplicación, se usa el símbolo <code>|</code> en la plantilla HTML, o se usa el servicio <code>$filter</code> desde el lado de JavaScript.
         </p>
+        <p>
+          Para usarlos en expresiones en una vista se usa de la siguiente manera:
+        </p>
+        <pre class="ng-non-bindable">{{ expresión | filtro }}</pre>
+        <p>
+          Los filtros pueden ser anidados usando varios <code>|</code>.
+        </p>
+        <pre class="ng-non-bindable">{{ expresión | filtro1 | filtro2 | ... }}</pre>
+        <p>
+          También pueden tener argumentos:
+        </p>
+        <pre class="ng-non-bindable">{{ expresión | filtro:argumento1:argumento2:... }}</pre>
       </div>
     </div>
   </div>

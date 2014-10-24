@@ -1,6 +1,9 @@
 /*****************************************************************
  Globales
  *****************************************************************/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
 html {
   height: 100%;
   margin: 0;
@@ -108,10 +111,10 @@ code span, pre span {
  Animaciones
  *****************************************************************/
 .animacion {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
+  -webkit-transition: all cubic-bezier(0.25, 0.15, 0.45, 0.9) 0.5s;
+  -moz-transition: all cubic-bezier(0.25, 0.15, 0.45, 0.9) 0.5s;
+  -o-transition: all cubic-bezier(0.25, 0.15, 0.45, 0.9) 0.5s;
+  transition: all cubic-bezier(0.25, 0.15, 0.45, 0.9) 0.5s; }
 
 .animacion-corta {
   -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;

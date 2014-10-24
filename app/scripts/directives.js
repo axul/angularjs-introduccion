@@ -30,6 +30,7 @@ directive('appVersion', ['version', function(version) {
   <br><span>Cargando</span>\
   </div></div>\
   </div>\
+  <h4>Código de ejemplo</h4>\
   <iframe width="100%" height="300" ng-src="{{urlAprobado}}" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
   return {
     template: cargando,

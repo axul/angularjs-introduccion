@@ -1,0 +1,12 @@
+<pre>//Se registra el servicio
+.factory(<span>'serviceId',</span> function() {
+  this.hola = function(){
+    return 'hola';
+  }
+});
+//Se injecta el servicio en la aplicación
+.controller('MiControl', ['$scope','serviceId', function($scope, serviceId) {
+  $scope.mensaje = function() {
+    serviceId.hola();
+  }
+}]);</pre>
