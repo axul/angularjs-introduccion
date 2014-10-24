@@ -205,6 +205,7 @@
         </p>
         <pre class="ng-non-bindable">{{ expresión | filtro:argumento1:argumento2:... }}</pre>
       </div>
+      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==7" iframe-loader url="{{jsFiddles[3].url}}"></div>
     </div>
   </div>
   <div class="seccion">
@@ -214,9 +215,31 @@
     </h3>
     <div class="" ng-show="segmentoActivo==8">
       <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==8">
+        <h4>
+          Son información que se emite y propaga a través de la aplicación que contienen información acerca de algo que sucede en ella.
+        </h4>
         <p>
-          En desarrollo.
+          Así como el navegador responde a eventos como el click del mouse o el scroll, AngularJs responde a eventos propios del marco de desarrollo. Esto nos provee de la ventaja de una mayor comunicación entre componentes bastante separados.
         </p>
+        <p>
+          Los eventos viajan a través de el arbol de herencia de los scopes.
+        </p>
+        <p>
+          Para enviar un evento hacia arriba desde algún scope hijo se usa la función <code>$emit()</code>.
+        </p>
+        <pre class="ng-non-bindable"><var>$scope</var>.<var>$emit</var>(<var><span>'evento_disparado'</span></var>,<var>$scope</var>.info);</pre>
+        <p>
+          Para enviar un evento hacia abajo en el arbol de herencia, se usa <code>$broadcast()</code>.
+        </p>
+        <pre class="ng-non-bindable"><var>$scope</var>.<var>$broadcast</var>(<var><span>'evento_disparado'</span></var>,<var>$scope</var>.info);</pre>
+        <p>
+          Para recibir los eventos, se utiliza la siguiente sintaxis:
+        </p>
+        <pre class="ng-non-bindable"><var>$rootScope</var>.<var>$on</var>(<span>'$routeChangeSuccess'</span>, function(){});</pre>
+        <p>
+          Al recibir un evento, si se quiere detener su propagación por el resto de los scopes, se usa el método <code>$stopPropagation()</code>, de esta manera se puede llegar a tener un mejor control sobre los eventos y evitar posibles colisiones entre scopes.
+        </p>
+        <pre><var>$scope</var>.<var>$on</var>(<span>'$includeContentLoaded'</span>,function(event){event.stopPropagation();});</pre>
       </div>
     </div>
   </div>
