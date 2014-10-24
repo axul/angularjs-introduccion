@@ -1,8 +1,5 @@
 'use strict';
-
 /* Directives */
-
-
 angular.module('IntroAngularjs.directives', []).
 directive('appVersion', ['version', function(version) {
   return function(scope, elm, attrs) {
@@ -22,6 +19,9 @@ directive('appVersion', ['version', function(version) {
     }
   };
 }])
+/*Directiva iframeLoader*/
+/*Se usa para cargar iframes al DOM con un icono de cargando*/
+/*@param url: url externo a validar e inyectar en el template que crea un iframe*/
 .directive('iframeLoader', ['$sce',function($sce){
   var cargando = 
   '<div class="cargando-wrap animacion animacion-fade" ng-show="mostrarCargando">\
@@ -33,21 +33,24 @@ directive('appVersion', ['version', function(version) {
   <h4>Código de ejemplo</h4>\
   <iframe width="100%" height="300" ng-src="{{urlAprobado}}" allowfullscreen="allowfullscreen" frameborder="0"></iframe>';
   return {
-    template: cargando,
+    template: cargando, //plantilla html a cargar con la directiva
     scope: {
-      url: "@"
+      url: "@" //valor sin two way binding
     },
     compile: function(element, attributes){
       return{
+        //Código que se ejecuta antes de la compilación de la plantilla en la directiva
         pre: function(scope){
           scope.urlAprobado = $sce.trustAsResourceUrl(scope.url);
        },
+        //Código que se ejecuta posterior a la compilación
         post: function(scope,element,attrs){
           scope.mostrarCargando = true;
           element.find('iframe').on('load', function(){
             scope.mostrarCargando = false;
             scope.$digest();
           });
+          //Código a ejecutarse al destruirse la directiva
           element.on('$destroy', function(){
 
           }); 
