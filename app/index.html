@@ -27,23 +27,25 @@
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span class="titulo"><img class="logo-angular" src="images/angularjs.png" alt="Logo-angular"><span class="hidden-xs hidden-sm">AngularJs</span></span>
+        <span class="titulo">
+          <img class="logo-angular" src="images/angularjs.png" alt="Logo-angular">
+          <span class="hidden-xs hidden-sm">AngularJs</span>
+        </span>
       </div>      
-      <div class="collapse navbar-collapse">
+      <div class="collapse navbar-collapse" data-toggle="collapse">
         <ul class="nav navbar-nav navbar-right menu-principal">
           <li ng-class="{'active': seccionActual=='Inicio'}">
-            <a href="#home">Introducción</a>
+            <a href="#home" data-toggle="collapse" data-target=".navbar-collapse">Introducción</a>
           </li>
-          <li ng-class="{'active': seccionActual=='Curso'}" ng-click="">
-            <a href="#curso">AngularJs</a>
+          <li ng-class="{'active': seccionActual=='Curso'}">
+            <a href="#curso" data-toggle="collapse" data-target=".navbar-collapse">AngularJs</a>
           </li>
-          <li ng-class="{'active': seccionActual=='Acercade'}" ng-click="">
-            <a href="#acercaDe">Acerca de</a>
+          <li ng-class="{'active': seccionActual=='Acercade'}">
+            <a href="#acercaDe" data-toggle="collapse" data-target=".navbar-collapse">Acerca de</a>
           </li>
         </ul>
       </div>

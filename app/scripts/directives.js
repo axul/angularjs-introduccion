@@ -68,10 +68,8 @@ directive('appVersion', ['version', function(version) {
          var offset = element.position().top;
          var offsetScroll = offset;
          var fix = 50;
-         $('body').animate({
-          scrollTop: offsetScroll - fix
-        }, 200);
-       }, 400);
+         $('body').animate({scrollTop: offsetScroll - fix}, 200);
+       }, 600);
       });
     }
   }

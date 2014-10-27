@@ -21,6 +21,7 @@ config(['$routeProvider', function($routeProvider) {
 app.run(["$rootScope", function($rootScope){
   $rootScope.globales = {};
   $rootScope.$on('$routeChangeSuccess', function(){
+    $('body').scrollTop(0);
   });
   $rootScope.$on('$routeChangeStart', function(t) { 
   });
