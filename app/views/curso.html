@@ -1,246 +1,248 @@
-<div class="grupo-clickable">
-  <h2>Aspectos técnicos</h2>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(1)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==1}"></span>
-      Data Binding
-    </h3>
-    <div class="" ng-show="segmentoActivo==1">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==1">
-        <div class="row">
-          <div class="col-xs-6 col-sm-4 col-lg-3 img-wrap">
-            <img class="hidden-lg" src="images/one-way-data-binding.png" alt="data binding">
-            <img class="" src="images/data-binding.png" alt="data binding">
-          </div>
-          <div class="col-sm-8 col-lg-9">
-            <h4>
-              Las plantillas de angular se compilan para producir vistas, luego cualquier cambio en ellas se reflejan en el modelo, y cualquier cambio en el modelo se propaga a la vista, que pasa a ser una projección instantánea de este.
-            </h4>
-            <p>
-              En la mayoría de los sistemas de plantillas, el sistema mezcla los datos en una sola dirección: se mezclan las plantillas y los modelos en una vista. Luego, los cambios de los modelos no se reflejan automáticamente en la vista, y cualquier cambio que el usuario relaiza en la vista no se ve automáticamente reflejado en el modelo.
-            </p>
-            <p>
-              El Data-binding en AngularJs es la sincronización automática de los datos entre el modelo y la vista. La forma en que se implementa deja al modelo ser la "single-source-of-truth" de la aplicación.
-            </p>
+<div class="container">
+  <div class="grupo-clickable">
+    <h2>Aspectos técnicos</h2>
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(1)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==1}"></span>
+        Data Binding
+      </h3>
+      <div class="" ng-show="segmentoActivo==1">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==1">
+          <div class="row">
+            <div class="col-xs-6 col-sm-4 col-lg-3 img-wrap">
+              <img class="hidden-lg" src="images/one-way-data-binding.png" alt="data binding">
+              <img class="" src="images/data-binding.png" alt="data binding">
+            </div>
+            <div class="col-sm-8 col-lg-9">
+              <h4>
+                Las plantillas de angular se compilan para producir vistas, luego cualquier cambio en ellas se reflejan en el modelo, y cualquier cambio en el modelo se propaga a la vista, que pasa a ser una projección instantánea de este.
+              </h4>
+              <p>
+                En la mayoría de los sistemas de plantillas, el sistema mezcla los datos en una sola dirección: se mezclan las plantillas y los modelos en una vista. Luego, los cambios de los modelos no se reflejan automáticamente en la vista, y cualquier cambio que el usuario relaiza en la vista no se ve automáticamente reflejado en el modelo.
+              </p>
+              <p>
+                El Data-binding en AngularJs es la sincronización automática de los datos entre el modelo y la vista. La forma en que se implementa deja al modelo ser la "single-source-of-truth" de la aplicación.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==1" iframe-loader url="{{jsFiddles[0].url}}">
-      </div>  
-    </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(2)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==2}"></span>
-      Modulos
-    </h3>
-    <div class="" ng-show="segmentoActivo==2">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==2">
-        <h4>¿Qué es un módulo?</h4>  
-        <p>
-          Contenedores para diferentes partes de la aplicación (controladores, servicios, entre otros).
-        </p>
-        <div ng-include="'views/codigoModulos.html'"></div>
-        <p>
-          AngularJs no tiene un método principal. Los módulos se encargan de especificar el arranque y la secuencia de una aplicación.
-        </p>
-        <p>
-          Esto permite código fácilmente reusable y simple de entender.
-        </p>
+        <div class="relative animacion animacion-fade-in" ng-if="segmentoActivo==1" iframe-loader url="{{jsFiddles[0].url}}">
+        </div>  
       </div>
     </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(3)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==3}"></span>
-      Scopes
-    </h3>
-    <div class="" ng-show="segmentoActivo==3">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==3">
-        <h4>¿Qué es un scope?</h4>
-        <p>
-          Es el objeto que refiere al modelo de la aplicación. Provee de contexto para la ejecución de expresiones. Son organizados de forma jerárgica. Son el "pegamento" entre el controlador y la vista.
-        </p>
-        <p>
-          Cuando AngularJs empieza a ejecutarse, compila el código de las plantillas HTML para generar las vistas y empieza a realizar los enlaces entre la aplicación y el <code>$rootscope</code>, que pasa a ser el padre de todos los objetos <code>$scope</code> que se instancien, siendo el objeto más cercano a el contexto global en una aplicación AngularJs.
-        </p>
-        <p>
-          No es una buena práctica desarrollar demasiado código en el <code>$rootScope</code>, ya que puede llevar a colisiones, y se pierde el control del contexto en la aplicación
-        </p>
-        <ul>
-          <li>Observan las modificaciones en el modelo (<code>$watch</code>)</li>
-          <li>Propagan estos cambios hasta las vistas (<code>$apply</code>)</li>
-          <li>Pueden anidarse como hijos o aislados para controlar el acceso a las propiedades de los componentes de las aplicaciones</li>
-        </ul>
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(2)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==2}"></span>
+        Modulos
+      </h3>
+      <div class="" ng-show="segmentoActivo==2">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==2">
+          <h4>¿Qué es un módulo?</h4>  
+          <p>
+            Contenedores para diferentes partes de la aplicación (controladores, servicios, entre otros).
+          </p>
+          <div ng-include="'views/codigoModulos.html'"></div>
+          <p>
+            AngularJs no tiene un método principal. Los módulos se encargan de especificar el arranque y la secuencia de una aplicación.
+          </p>
+          <p>
+            Esto permite código fácilmente reusable y simple de entender.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(4)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==4}"></span>
-      Routing
-    </h3>
-    <div class="" ng-show="segmentoActivo==4">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==4">
-        <h4>
-          ¿Cómo se manejan las rutas en AngularJs?
-        </h4>
-        <p>
-          Las rutas de las aplicaciones en AngularJs se manejan a través de el <var>$routeProvider</var> que es el proveedor del servidor de rutas <var>$route</var> que requiere el modulo <code>ngRoute</code>.
-        </p>
-        <div ng-include="'views/codigoRouting.html'"></div>
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(3)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==3}"></span>
+        Scopes
+      </h3>
+      <div class="" ng-show="segmentoActivo==3">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==3">
+          <h4>¿Qué es un scope?</h4>
+          <p>
+            Es el objeto que refiere al modelo de la aplicación. Provee de contexto para la ejecución de expresiones. Son organizados de forma jerárgica. Son el "pegamento" entre el controlador y la vista.
+          </p>
+          <p>
+            Cuando AngularJs empieza a ejecutarse, compila el código de las plantillas HTML para generar las vistas y empieza a realizar los enlaces entre la aplicación y el <code>$rootscope</code>, que pasa a ser el padre de todos los objetos <code>$scope</code> que se instancien, siendo el objeto más cercano a el contexto global en una aplicación AngularJs.
+          </p>
+          <p>
+            No es una buena práctica desarrollar demasiado código en el <code>$rootScope</code>, ya que puede llevar a colisiones, y se pierde el control del contexto en la aplicación
+          </p>
+          <ul>
+            <li>Observan las modificaciones en el modelo (<code>$watch</code>)</li>
+            <li>Propagan estos cambios hasta las vistas (<code>$apply</code>)</li>
+            <li>Pueden anidarse como hijos o aislados para controlar el acceso a las propiedades de los componentes de las aplicaciones</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(9)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==9}"></span>
-      Controladores
-    </h3>
-    <div class="" ng-show="segmentoActivo==9">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==9">
-        <h4>En AngularJs, los controladores son funciones constructoras de JavaScript que se utilizan para aumentar al Scope.</h4>
-        <p>
-          Cuando se instancian, se hace disponible un nuevo Scope hijo para injectarse como parametro en la función constructora del controlador (parámetro <code>$scope</code>).
-        </p>
-        <p>
-          Los controles se usa para:
-        </p>
-        <ul>
-          <li>Instanciar e inicializar el objeto <code>$scope</code> dentro de su contexto.</li>
-          <li>Manejar el comportamiento del scope.</li>
-        </ul>
-        <p>
-          Muchas veces se comete el error de utilizar los controladores para otro tipo de tareas. Desde un controlador no se debe: 
-        </p>
-        <ul>
-          <li>Manejar el DOM. Para ello AngularJs provee del databinding y directivas.</li>
-          <li>Manejar entradas de datos. Los controles de formularios de Angulajs están para esto.</li>
-          <li>Hacer filtros para salidas. Los filtros hacen esta tarea.</li>
-          <li>Compartir código entre controladores. Los servicios están para ello.</li>
-          <li>Controlar el ciclo de vida de otros componentes.</li>
-        </ul>
-        <p>
-          Sintaxis para los controladores:
-        </p>
-        <pre>.controller(<span>'Home'</span>, [<span>'$scope'</span>,<span>'$rootScope'</span>, function(<var>$scope</var>,<var>$rootScope</var>) {}]);</pre>
-      </div>
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==9" iframe-loader url="{{jsFiddles[1].url}}">
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(4)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==4}"></span>
+        Routing
+      </h3>
+      <div class="" ng-show="segmentoActivo==4">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==4">
+          <h4>
+            ¿Cómo se manejan las rutas en AngularJs?
+          </h4>
+          <p>
+            Las rutas de las aplicaciones en AngularJs se manejan a través de el <var>$routeProvider</var> que es el proveedor del servidor de rutas <var>$route</var> que requiere el modulo <code>ngRoute</code>.
+          </p>
+          <div ng-include="'views/codigoRouting.html'"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(5)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==5}"></span>
-      Directivas
-    </h3>
-    <div class="" ng-show="segmentoActivo==5">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==5">
-        <h4>¿Qué son las directivas?</h4>
-        <p>
-          Son marcadores en elementos del DOM Que le dicen al compilador HTML (<code>$compile</code>) de AngularJs que ese elemento en cuestión tendra asignado un comportamiento específico.
-        </p>
-        <p>
-          AngularJs tiene un amplio set de directivas incluidas, como <code>ng-repeat</code> que son de extrema utilidad para cualquier desarrollador que se aventure con este framework, ademas de ofrecer la posibilidad de crear nuestras propias directivas a nuestro antojo.
-        </p>
-        <p>
-          Ejemplo de la sintaxis para la directiva de un controlador:
-        </p>
-        <pre class="ng-non-bindable">&lt;div <var>ng-controller</var>=<span>"Controller"</span>&gt;&lt;/div&gt;</pre>
-      </div>
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==5" iframe-loader url="{{jsFiddles[2].url}}">
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(9)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==9}"></span>
+        Controladores
+      </h3>
+      <div class="" ng-show="segmentoActivo==9">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==9">
+          <h4>En AngularJs, los controladores son funciones constructoras de JavaScript que se utilizan para aumentar al Scope.</h4>
+          <p>
+            Cuando se instancian, se hace disponible un nuevo Scope hijo para injectarse como parametro en la función constructora del controlador (parámetro <code>$scope</code>).
+          </p>
+          <p>
+            Los controles se usa para:
+          </p>
+          <ul>
+            <li>Instanciar e inicializar el objeto <code>$scope</code> dentro de su contexto.</li>
+            <li>Manejar el comportamiento del scope.</li>
+          </ul>
+          <p>
+            Muchas veces se comete el error de utilizar los controladores para otro tipo de tareas. Desde un controlador no se debe: 
+          </p>
+          <ul>
+            <li>Manejar el DOM. Para ello AngularJs provee del databinding y directivas.</li>
+            <li>Manejar entradas de datos. Los controles de formularios de Angulajs están para esto.</li>
+            <li>Hacer filtros para salidas. Los filtros hacen esta tarea.</li>
+            <li>Compartir código entre controladores. Los servicios están para ello.</li>
+            <li>Controlar el ciclo de vida de otros componentes.</li>
+          </ul>
+          <p>
+            Sintaxis para los controladores:
+          </p>
+          <pre>.controller(<span>'Home'</span>, [<span>'$scope'</span>,<span>'$rootScope'</span>, function(<var>$scope</var>,<var>$rootScope</var>) {}]);</pre>
+        </div>
+        <div class="relative animacion animacion-fade-in" ng-if="segmentoActivo==9" iframe-loader url="{{jsFiddles[1].url}}">
+        </div>
       </div>
     </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(6)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==6}"></span>
-      Servicios
-    </h3>
-    <div class="" ng-show="segmentoActivo==6">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==6">
-        <h4>
-          Los servicios se utilizan en la aplicación para compartir código a través de ella.
-        </h4>
-        <p>
-          Los controladores son instanciados sólo cuándo se necesitan y son descartados cuando se sale de su contexto. Cada vez que cambiamos de ruta o se carga una vista, el controlador actual se limpia. 
-        </p>
-        <p>
-          Los servicios son objetos que se instanacian una sola vez por aplicación, y se cargan solo cuándo son necesarios (lazy-load).
-        </p>
-        <h4>Registrar y usar un servicio</h4>
-        <p>
-          Los servicios se registran en los módulos a través de diferentes métodos.
-        </p>
-        <p>
-          Para usar un servicio se debe agregar la dependencia al componente donde se quiere usar, de esta manera se injecta y se vuelve disponible.
-        </p>
-        <div ng-include="'views/codigoServicios.html'"></div>
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(5)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==5}"></span>
+        Directivas
+      </h3>
+      <div class="" ng-show="segmentoActivo==5">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==5">
+          <h4>¿Qué son las directivas?</h4>
+          <p>
+            Son marcadores en elementos del DOM Que le dicen al compilador HTML (<code>$compile</code>) de AngularJs que ese elemento en cuestión tendra asignado un comportamiento específico.
+          </p>
+          <p>
+            AngularJs tiene un amplio set de directivas incluidas, como <code>ng-repeat</code> que son de extrema utilidad para cualquier desarrollador que se aventure con este framework, ademas de ofrecer la posibilidad de crear nuestras propias directivas a nuestro antojo.
+          </p>
+          <p>
+            Ejemplo de la sintaxis para la directiva de un controlador:
+          </p>
+          <pre class="ng-non-bindable">&lt;div <var>ng-controller</var>=<span>"Controller"</span>&gt;&lt;/div&gt;</pre>
+        </div>
+        <div class="relative animacion animacion-fade-in" ng-if="segmentoActivo==5" iframe-loader url="{{jsFiddles[2].url}}">
+        </div>
       </div>
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==6" iframe-loader url="{{jsFiddles[4].url}}"></div>
     </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(7)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==7}"></span>
-      Filtros
-    </h3>
-    <div class="" ng-show="segmentoActivo==7">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==7">
-        <h4>
-          Los filtros proveen de una manera para dar formato a los datos de salida.
-        </h4>
-        <p>
-          Para utilizar los filtros en nuestra aplicación, se usa el símbolo <code>|</code> en la plantilla HTML, o se usa el servicio <code>$filter</code> desde el lado de JavaScript.
-        </p>
-        <p>
-          Para usarlos en expresiones en una vista se usa de la siguiente manera:
-        </p>
-        <pre class="ng-non-bindable">{{ expresión | filtro }}</pre>
-        <p>
-          Los filtros pueden ser anidados usando varios <code>|</code>.
-        </p>
-        <pre class="ng-non-bindable">{{ expresión | filtro1 | filtro2 | ... }}</pre>
-        <p>
-          También pueden tener argumentos:
-        </p>
-        <pre class="ng-non-bindable">{{ expresión | filtro:argumento1:argumento2:... }}</pre>
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(6)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==6}"></span>
+        Servicios
+      </h3>
+      <div class="" ng-show="segmentoActivo==6">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==6">
+          <h4>
+            Los servicios se utilizan en la aplicación para compartir código a través de ella.
+          </h4>
+          <p>
+            Los controladores son instanciados sólo cuándo se necesitan y son descartados cuando se sale de su contexto. Cada vez que cambiamos de ruta o se carga una vista, el controlador actual se limpia. 
+          </p>
+          <p>
+            Los servicios son objetos que se instanacian una sola vez por aplicación, y se cargan solo cuándo son necesarios (lazy-load).
+          </p>
+          <h4>Registrar y usar un servicio</h4>
+          <p>
+            Los servicios se registran en los módulos a través de diferentes métodos.
+          </p>
+          <p>
+            Para usar un servicio se debe agregar la dependencia al componente donde se quiere usar, de esta manera se injecta y se vuelve disponible.
+          </p>
+          <div ng-include="'views/codigoServicios.html'"></div>
+        </div>
+        <div class="relative animacion animacion-fade-in" ng-if="segmentoActivo==6" iframe-loader url="{{jsFiddles[4].url}}"></div>
       </div>
-      <div class="animacion animacion-fade-in" ng-if="segmentoActivo==7" iframe-loader url="{{jsFiddles[3].url}}"></div>
     </div>
-  </div>
-  <div class="seccion">
-    <h3 ng-click="activarSegmento(8)">
-      <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==8}"></span>
-      Eventos
-    </h3>
-    <div class="" ng-show="segmentoActivo==8">
-      <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==8">
-        <h4>
-          Son información que se emite y propaga a través de la aplicación que contienen información acerca de algo que sucede en ella.
-        </h4>
-        <p>
-          Así como el navegador responde a eventos como el click del mouse o el scroll, AngularJs responde a eventos propios del marco de desarrollo. Esto nos provee de la ventaja de una mayor comunicación entre componentes bastante separados.
-        </p>
-        <p>
-          Los eventos viajan a través de el arbol de herencia de los scopes.
-        </p>
-        <p>
-          Para enviar un evento hacia arriba desde algún scope hijo se usa la función <code>$emit()</code>.
-        </p>
-        <pre class="ng-non-bindable"><var>$scope</var>.<var>$emit</var>(<var><span>'evento_disparado'</span></var>,<var>$scope</var>.info);</pre>
-        <p>
-          Para enviar un evento hacia abajo en el arbol de herencia, se usa <code>$broadcast()</code>.
-        </p>
-        <pre class="ng-non-bindable"><var>$scope</var>.<var>$broadcast</var>(<var><span>'evento_disparado'</span></var>,<var>$scope</var>.info);</pre>
-        <p>
-          Para recibir los eventos, se utiliza la siguiente sintaxis:
-        </p>
-        <pre class="ng-non-bindable"><var>$rootScope</var>.<var>$on</var>(<span>'$routeChangeSuccess'</span>, function(){});</pre>
-        <p>
-          Al recibir un evento, si se quiere detener su propagación por el resto de los scopes, se usa el método <code>$stopPropagation()</code>, de esta manera se puede llegar a tener un mejor control sobre los eventos y evitar posibles colisiones entre scopes.
-        </p>
-        <pre><var>$scope</var>.<var>$on</var>(<span>'$includeContentLoaded'</span>,function(event){event.stopPropagation();});</pre>
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(7)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==7}"></span>
+        Filtros
+      </h3>
+      <div class="" ng-show="segmentoActivo==7">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==7">
+          <h4>
+            Los filtros proveen de una manera para dar formato a los datos de salida.
+          </h4>
+          <p>
+            Para utilizar los filtros en nuestra aplicación, se usa el símbolo <code>|</code> en la plantilla HTML, o se usa el servicio <code>$filter</code> desde el lado de JavaScript.
+          </p>
+          <p>
+            Para usarlos en expresiones en una vista se usa de la siguiente manera:
+          </p>
+          <pre class="ng-non-bindable">{{ expresión | filtro }}</pre>
+          <p>
+            Los filtros pueden ser anidados usando varios <code>|</code>.
+          </p>
+          <pre class="ng-non-bindable">{{ expresión | filtro1 | filtro2 | ... }}</pre>
+          <p>
+            También pueden tener argumentos:
+          </p>
+          <pre class="ng-non-bindable">{{ expresión | filtro:argumento1:argumento2:... }}</pre>
+        </div>
+        <div class="relative animacion animacion-fade-in" ng-if="segmentoActivo==7" iframe-loader url="{{jsFiddles[3].url}}"></div>
+      </div>
+    </div>
+    <div class="seccion" sir-scroller>
+      <h3 ng-click="activarSegmento(8)">
+        <span class="animacion glyphicon glyphicon-expand" ng-class="{'activo animacion-rotar-45': segmentoActivo==8}"></span>
+        Eventos
+      </h3>
+      <div class="" ng-show="segmentoActivo==8">
+        <div class="descripcion animacion animacion-fade-in" ng-show="segmentoActivo==8">
+          <h4>
+            Son información que se emite y propaga a través de la aplicación que contienen información acerca de algo que sucede en ella.
+          </h4>
+          <p>
+            Así como el navegador responde a eventos como el click del mouse o el scroll, AngularJs responde a eventos propios del marco de desarrollo. Esto nos provee de la ventaja de una mayor comunicación entre componentes bastante separados.
+          </p>
+          <p>
+            Los eventos viajan a través de el arbol de herencia de los scopes.
+          </p>
+          <p>
+            Para enviar un evento hacia arriba desde algún scope hijo se usa la función <code>$emit()</code>.
+          </p>
+          <pre class="ng-non-bindable"><var>$scope</var>.<var>$emit</var>(<var><span>'evento_disparado'</span></var>,<var>$scope</var>.info);</pre>
+          <p>
+            Para enviar un evento hacia abajo en el arbol de herencia, se usa <code>$broadcast()</code>.
+          </p>
+          <pre class="ng-non-bindable"><var>$scope</var>.<var>$broadcast</var>(<var><span>'evento_disparado'</span></var>,<var>$scope</var>.info);</pre>
+          <p>
+            Para recibir los eventos, se utiliza la siguiente sintaxis:
+          </p>
+          <pre class="ng-non-bindable"><var>$rootScope</var>.<var>$on</var>(<span>'$routeChangeSuccess'</span>, function(){});</pre>
+          <p>
+            Al recibir un evento, si se quiere detener su propagación por el resto de los scopes, se usa el método <code>$stopPropagation()</code>, de esta manera se puede llegar a tener un mejor control sobre los eventos y evitar posibles colisiones entre scopes.
+          </p>
+          <pre><var>$scope</var>.<var>$on</var>(<span>'$includeContentLoaded'</span>,function(event){event.stopPropagation();});</pre>
+        </div>
       </div>
     </div>
   </div>

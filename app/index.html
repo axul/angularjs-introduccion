@@ -21,6 +21,8 @@
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+
+  <!--Header-->
   <div class="header navbar navbar-default navbar-fixed-top banner affix-top ng-cloak" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -30,7 +32,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span class="titulo"><img class="logo-angular" src="images/angularjs.png" alt="Logo-angular"><span class="hidden-xs hidden-sm">Introducción a AngularJs</span></span>
+        <span class="titulo"><img class="logo-angular" src="images/angularjs.png" alt="Logo-angular"><span class="hidden-xs hidden-sm">AngularJs</span></span>
       </div>      
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right menu-principal">
@@ -48,16 +50,19 @@
     </div>
   </div>
 
-  <div class="container cuerpo-wrap ng-cloack">
-    <div ng-view class="cuerpo animacion animacion-slide-izq" ng-class="{'no-padding': seccionActual=='AcercaDe'}"></div>  
+  <!--Cuerpo-->
+  <div class="cuerpo-wrap ng-cloack" ng-class="{'no-margin': seccionActual=='AcercaDe'}">
+    <div class="container-fluid">
+      <div ng-view class="row cuerpo animacion animacion-slide-izq"></div>    
+    </div>
   </div>
   
-  <div class="footer animacion animacion-fade ng-cloak" ng-show="seccionActual!='AcercaDe'">
+  <!--Footer-->
+  <div class="animacion animacion-fade footer ng-cloak" ng-show="seccionActual!='AcercaDe'">
     <div class="container">
-      <p>
-        {{ 'Versión: v%VERSION%.' | interpolate }}
-      </p>
-      <img class="logo hidden-xs" src="images/logo.png" alt="Logo-angular">
+      <a target="_blank" href="sirideas.com">
+        <img class="logo" src="images/logo.png" alt="Logo-angular">
+      </a>
     </div>
   </div>
 

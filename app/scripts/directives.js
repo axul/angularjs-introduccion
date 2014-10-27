@@ -42,7 +42,7 @@ directive('appVersion', ['version', function(version) {
         //Código que se ejecuta antes de la compilación de la plantilla en la directiva
         pre: function(scope){
           scope.urlAprobado = $sce.trustAsResourceUrl(scope.url);
-       },
+        },
         //Código que se ejecuta posterior a la compilación
         post: function(scope,element,attrs){
           scope.mostrarCargando = true;
@@ -50,6 +50,7 @@ directive('appVersion', ['version', function(version) {
             scope.mostrarCargando = false;
             scope.$digest();
           });
+
           //Código a ejecutarse al destruirse la directiva
           element.on('$destroy', function(){
 
@@ -57,4 +58,21 @@ directive('appVersion', ['version', function(version) {
         }
       }
     }
-  }}]);
+  }}])
+.directive('sirScroller', ['$timeout',function($timeout){
+  return{
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.on('click',function(){
+        $timeout(function() {
+         var offset = element.position().top;
+         var offsetScroll = offset;
+         var fix = 50;
+         $('body').animate({
+          scrollTop: offsetScroll - fix
+        }, 200);
+       }, 400);
+      });
+    }
+  }
+}]);

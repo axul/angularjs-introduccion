@@ -12,12 +12,13 @@ angular.module('IntroAngularjs.controllers', [])
 /*Se le inyecta el $sce que se utiliza para validar como seguros los url externos
 usados para demostraciones de códigos en la aplicación. Sin este servicio, AngularJs
 no permite utilizar vínculos externos.*/
-.controller('Curso', ['$scope','$rootScope','$sce', function($scope,$rootScope,$sce) {
+.controller('Curso', ['$scope','$rootScope','$sce','$timeout', function($scope,$rootScope,$sce, $timeout) {
   $rootScope.seccionActual = 'Curso'; // vista activa en la aplicación.
   $scope.segmentoActivo == 0; // segmento activo para mostrar en la lista de items.
   $scope.activarSegmento = function(i){
-    if($scope.segmentoActivo != i)
+    if($scope.segmentoActivo != i){
       $scope.segmentoActivo = i;
+    }
     else
       $scope.segmentoActivo = 0; //si el segmento se ecuentra activo, se colapsa
   }
@@ -29,6 +30,11 @@ no permite utilizar vínculos externos.*/
   {nombre:'Filtros', url: 'http://jsfiddle.net/axul/thdmdagc/1/embedded/'},
   {nombre:'Servicios', url: 'http://jsfiddle.net/axul/1600736w/3/embedded/'}
   ];
+
+  // hace scroll al elemento que se expande
+  var scroller = function() {
+    
+  };
 }])
 /*Controlador AcercaDe*/
 /*Usado en la sección 'Acerca de' de la aplicación*/

@@ -20,7 +20,7 @@ html{
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: $gris-oscuro;
+  //background-color: $gris-oscuro;
 }
 
 body{
@@ -28,6 +28,7 @@ body{
   display: block;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .mascara-cargando{
@@ -53,19 +54,23 @@ body{
 
 .cuerpo-wrap{
   position: relative;
-}
-
-.cuerpo{
-  padding-top: 20px;
-  padding-bottom: 270px;
-  margin-top: 50px;
-  overflow: hidden;
-  &.no-padding{
-    padding-bottom: 0px;
+  z-index: 1;
+  background-color: white;
+  margin-bottom: 220px;
+  &.no-margin{
+    margin-bottom: 0;
   }
 }
 
+.cuerpo{
+  background-color: $blanco;
+  padding-top: 20px;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
 .header{
+  z-index: 2;
   .logo-angular{
     height: 50px;
     float: left;
@@ -81,7 +86,9 @@ body{
 }
 
 .footer{
-  position: absolute;
+  height: 230px;
+  z-index: 0;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
@@ -133,6 +140,10 @@ body{
   }
 }
 
+.relative{
+  position:relative;
+}
+
 .glyphicon-expand{
   color: $rojo-angular;
   vertical-align: top;
@@ -148,11 +159,15 @@ var{
 
 .img-wrap{
   text-align: center;
+  display: inline-block;
   img{
     max-width: 100%;
   }
   &.autor{
     width: 120px;
+  }
+  &.qr{
+    width: 200px;
   }
 }
 
@@ -178,10 +193,10 @@ code,pre{
 }
 
 .animacion-corta{
-  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
-  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
-  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
-  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.550, 0.940) 0.2s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.550, 0.940) 0.2s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.550, 0.940) 0.2s;
+  transition:all cubic-bezier(0.250, 0.460, 0.550, 0.940) 0.2s;
 }
 
 .animacion-fade{
@@ -198,7 +213,7 @@ code,pre{
     opacity: 0;
   }
 }
-//ng-hide-add ng-hide ng-hide-add-active
+
 .animacion-fade-in{
   &.ng-enter,&.ng-hide-remove{
     opacity: 0;
@@ -206,57 +221,57 @@ code,pre{
   &.ng-enter.ng-enter-active,&.ng-hide-remove.ng-hide-remove-active{
     opacity: 1;
   }
-/*   &.ng-leave,&.ng-hide-add,&.ng-hide{
+}
+
+.animacion-fade-out{
+  &.ng-enter,&.ng-hide-remove{
     display: none;
+  }
+  &.ng-enter.ng-enter-active,&.ng-hide-remove.ng-hide-remove-active{
+    display: none;
+  }
+  &.ng-leave,&.ng-hide-add{
+    opacity: 1;
   }
   &.ng-leave.ng-leave-active,&.ng-hide-add.ng-hide-add-active{
-    display: none;
-    } */
+    opacity: 0;
   }
+}
 
-  .animacion-fade-out{
-    &.ng-enter,&.ng-hide-remove{
-      display: none;
-    }
-    &.ng-enter.ng-enter-active,&.ng-hide-remove.ng-hide-remove-active{
-      display: none;
-    }
-    &.ng-leave,&.ng-hide-add{
-      opacity: 1;
-    }
-    &.ng-leave.ng-leave-active,&.ng-hide-add.ng-hide-add-active{
-      opacity: 0;
-    }
+.animacion-slide-izq{
+  &.ng-enter,&.ng-hide-remove{
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
-
-  .animacion-slide-izq{
-    &.ng-enter,&.ng-hide-remove{
-      -webkit-transform: translate3d(100%,0,0);
-      transform: translate3d(100%,0,0);
-    }
-    &.ng-leave,&.ng-hide-add{
-      opacity: 1;
-      position: absolute;
-    } 
-    &.ng-enter.ng-enter-active,&.ng-hide-remove.ng-hide-remove-active{
-      position: absolute;
-      -webkit-transform: translate3d(0,0,0);
-      transform: translate3d(0%,0,0);
-    }
-    &.ng-leave.ng-leave-active,&.ng-hide-add.ng-hide-add-active{
-      position: absolute;
-      opacity: 0;
-      position: absolute;
-    }
+  &.ng-leave,&.ng-hide-add{
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+  } 
+  &.ng-enter.ng-enter-active,&.ng-hide-remove.ng-hide-remove-active{
+    position: absolute;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0%,0,0);
+    width: 100%;
+    top: 0;
   }
-  .animacion-slide-arr{
-    &.ng-enter,&.ng-hide-remove{
+  &.ng-leave.ng-leave-active,&.ng-hide-add.ng-hide-add-active{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+  }
+}
+.animacion-slide-arr{
+  &.ng-enter,&.ng-hide-remove{
 
-    }
-    &.ng-enter.ng-enter-active,&.ng-hide-remove.ng-hide-remove-active{
+  }
+  &.ng-enter.ng-enter-active,&.ng-hide-remove.ng-hide-remove-active{
 
-    }
-    &.ng-leave,&.ng-hide-add{
+  }
+  &.ng-leave,&.ng-hide-add{
     /* -webkit-transform: translate3d(0,0%,0);
     transform: translate3d(0,0%,0);
     margin-bottom: 0%;
