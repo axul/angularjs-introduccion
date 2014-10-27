@@ -39,13 +39,22 @@
       <div class="collapse navbar-collapse" data-toggle="collapse">
         <ul class="nav navbar-nav navbar-right menu-principal">
           <li ng-class="{'active': seccionActual=='Inicio'}">
-            <a href="#home" data-toggle="collapse" data-target=".navbar-collapse">Introducción</a>
+            <a href="#home">
+              <span class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Introducción</span>
+              <span class="hidden-xs">Introducción</span>
+            </a>
           </li>
           <li ng-class="{'active': seccionActual=='Curso'}">
-            <a href="#curso" data-toggle="collapse" data-target=".navbar-collapse">AngularJs</a>
+            <a href="#curso">
+              <span class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">AngularJs</span>
+              <span class="hidden-xs">AngularJs</span>
+            </a>
           </li>
-          <li ng-class="{'active': seccionActual=='Acercade'}">
-            <a href="#acercaDe" data-toggle="collapse" data-target=".navbar-collapse">Acerca de</a>
+          <li ng-class="{'active': seccionActual=='AcercaDe'}">
+            <a href="#acercaDe">
+              <span class="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Acerca de</span>
+              <span class="hidden-xs">Acerca de</span>
+            </a>
           </li>
         </ul>
       </div>
