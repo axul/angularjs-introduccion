@@ -26,7 +26,8 @@ no permite utilizar vínculos externos.*/
   {nombre:'Data binding', url: 'http://jsfiddle.net/axul/6dx7f96x/embedded/'},
   {nombre:'Controladores', url: 'http://jsfiddle.net/axul/wyzju2pu/2/embedded/'},
   {nombre:'Directivas', url: 'http://jsfiddle.net/axul/xbbde4r5/1/embedded/'},
-  {nombre:'Filtros', url: 'http://jsfiddle.net/axul/thdmdagc/1/embedded/'}
+  {nombre:'Filtros', url: 'http://jsfiddle.net/axul/thdmdagc/1/embedded/'},
+  {nombre:'Servicios', url: 'http://jsfiddle.net/axul/1600736w/3/embedded/'}
   ];
 }])
 /*Controlador AcercaDe*/

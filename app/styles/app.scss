@@ -271,17 +271,18 @@ code,pre{
   }
 } 
 
-.animacion-rotar-infinito{
-  transform-origin: 50% 50%;
-  -o-transform-origin:50% 50%;
-  -ms-transform-origin:50% 50%;
-  -moz-transform-origin:50% 50%;
-  -webkit-transform-origin:50% 50%;
-  -webkit-animation: Rotate 500ms infinite linear;
-  -moz-animation: Rotate 500ms infinite linear;
-  -ms-animation: Rotate 500ms infinite linear;
-  -o-animation: Rotate 500ms infinite linear;
-  animation: Rotate 500ms infinite linear;
+.animacion-rotar-refresh{
+  font-size: 110px;
+  transform-origin: 49.5% 48.5%;
+  -o-transform-origin: 49.5% 48.5%;
+  -ms-transform-origin: 49.5% 48.5%;
+  -moz-transform-origin: 49.5% 48.5%;
+  -webkit-transform-origin: 49.5% 48.5%;
+  -webkit-animation: Rotate 1s infinite linear;
+  -moz-animation: Rotate 1s infinite linear;
+  -ms-animation: Rotate 1s infinite linear;
+  -o-animation: Rotate 1s infinite linear;
+  animation: Rotate 1s infinite linear;
 }
 
 .animacion-rotar-45{
