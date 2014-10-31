@@ -128,6 +128,30 @@ var {
 code span, pre span {
   color: #682323; }
 
+.circulo-tiempo {
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  right: 15px;
+  bottom: -120px;
+  background-color: #457ef6;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 40; }
+  .circulo-tiempo .mensaje {
+    color: white; }
+    .circulo-tiempo .mensaje .tiempo {
+      font-size: 20px;
+      display: block;
+      white-space: nowrap; }
+  .circulo-tiempo .glyphicon-time {
+    font-size: 35px;
+    margin-top: 4.5px; }
+  .circulo-tiempo .glyphicon-pause {
+    font-size: 15px; }
+
 /*****************************************************************
  Animaciones
  *****************************************************************/
@@ -156,6 +180,12 @@ code span, pre span {
   opacity: 0; }
 .animacion-fade-in.ng-enter.ng-enter-active, .animacion-fade-in.ng-hide-remove.ng-hide-remove-active {
   opacity: 1; }
+.animacion-fade-in.ng-leave, .animacion-fade-in.ng-hide-add {
+  opacity: 0;
+  position: absolute; }
+.animacion-fade-in.ng-leave.ng-leave-active, .animacion-fade-in.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  position: absolute; }
 
 .animacion-fade-out.ng-enter, .animacion-fade-out.ng-hide-remove {
   display: none; }

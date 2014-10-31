@@ -15,10 +15,10 @@
             </div>
             <div class="col-sm-8 col-lg-9">
               <h4>
-                Las plantillas de angular se compilan para producir vistas, luego cualquier cambio en ellas se reflejan en el modelo, y cualquier cambio en el modelo se propaga a la vista, que pasa a ser una projección instantánea de este.
+                Las plantillas de angular se compilan para producir vistas, luego cualquier cambio en ellas se refleja en el modelo, y cualquier cambio en el modelo se propaga a la vista, que pasa a ser una proyección instantánea de este.
               </h4>
               <p>
-                En la mayoría de los sistemas de plantillas, el sistema mezcla los datos en una sola dirección: se mezclan las plantillas y los modelos en una vista. Luego, los cambios de los modelos no se reflejan automáticamente en la vista, y cualquier cambio que el usuario relaiza en la vista no se ve automáticamente reflejado en el modelo.
+                En la mayoría de los sistemas de plantillas, se mezclan los datos en una sola dirección: se mezclan las plantillas y los modelos en una vista. Luego, los cambios de los modelos no se reflejan automáticamente en la vista, y cualquier cambio que el usuario relaiza en la vista no se ve automáticamente reflejado en el modelo.
               </p>
               <p>
                 El Data-binding en AngularJs es la sincronización automática de los datos entre el modelo y la vista. La forma en que se implementa deja al modelo ser la "single-source-of-truth" de la aplicación.
@@ -68,6 +68,7 @@
           <p>
             No es una buena práctica desarrollar demasiado código en el <code>$rootScope</code>, ya que puede llevar a colisiones, y se pierde el control del contexto en la aplicación
           </p>
+          <p>Descripción de un scope:</p>
           <ul>
             <li>Observan las modificaciones en el modelo (<code>$watch</code>)</li>
             <li>Propagan estos cambios hasta las vistas (<code>$apply</code>)</li>
@@ -87,7 +88,7 @@
             ¿Cómo se manejan las rutas en AngularJs?
           </h4>
           <p>
-            Las rutas de las aplicaciones en AngularJs se manejan a través de el <var>$routeProvider</var> que es el proveedor del servidor de rutas <var>$route</var> que requiere el modulo <code>ngRoute</code>.
+            Las rutas de las aplicaciones en AngularJs se manejan a través de el <var>$routeProvider</var> que es el proveedor del servidor de rutas <var>$route</var> que requiere el módulo <code>ngRoute</code>.
           </p>
           <div ng-include="'views/codigoRouting.html'"></div>
         </div>
@@ -105,7 +106,7 @@
             Cuando se instancian, se hace disponible un nuevo Scope hijo para injectarse como parametro en la función constructora del controlador (parámetro <code>$scope</code>).
           </p>
           <p>
-            Los controles se usa para:
+            Los controladores se usa para:
           </p>
           <ul>
             <li>Instanciar e inicializar el objeto <code>$scope</code> dentro de su contexto.</li>

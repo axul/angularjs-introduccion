@@ -19,6 +19,45 @@ directive('appVersion', ['version', function(version) {
     }
   };
 }])
+.directive('sirCronometro',['$interval','$timeout', function($interval, $timeout){
+  return{
+    restrict: 'A',
+    templateUrl: 'views/timer.html',
+    link: function(scope, element, attrs) {
+      scope.mensaje = 'Comienza';
+      scope.pausado = true;
+      scope.segundos = 0;
+      scope.minutos = 0;
+      var segundos = 0;
+
+      $('.circulo-tiempo').css('bottom','15px');
+
+      element.on('click',function(){
+        scope.playPause();
+      });
+
+      $interval(function() {
+        if(!scope.pausado){
+          segundos ++;
+          scope.minutos = parseInt(segundos / 60 );
+          scope.segundos = segundos % 60;
+        }
+      }, 1000);
+
+      scope.playPause = function() {
+        scope.pausado = !scope.pausado;
+        if (scope.pausado) {
+          element.css('height','50px');
+          element.css('width','50px');
+        }
+        else{
+          element.css('height','6em');
+          element.css('width','6em');
+        }
+      }
+    }
+  };
+}])
 /*Directiva iframeLoader*/
 /*Se usa para cargar iframes al DOM con un icono de cargando*/
 /*@param url: url externo a validar e inyectar en el template que crea un iframe*/

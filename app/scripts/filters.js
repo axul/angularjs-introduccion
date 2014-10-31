@@ -5,4 +5,9 @@ angular.module('IntroAngularjs.filters', []).
     return function(text) {
       return String(text).replace(/\%VERSION\%/mg, version);
     };
+  }])
+  .filter('ceroIzq',[function(){
+    return function(input){
+      return input >= 10 ? input : '0' + input;
+    }
   }]);
